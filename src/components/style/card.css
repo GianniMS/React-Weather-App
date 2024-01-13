@@ -1,0 +1,13 @@
+.cardMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 20vw;
+    height: 60vh;
+
+    background-color: grey;
+    border: 3px black solid;
+    border-radius: 15px;
+}
