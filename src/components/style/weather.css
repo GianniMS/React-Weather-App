@@ -11,6 +11,6 @@ body, html {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to right, #4880EC, #019CAD);
+    background-image: linear-gradient(135deg, #F5EEE6, #FFF8E3);
     color: white; /* Set text color to make it visible on the gradient background */
 }

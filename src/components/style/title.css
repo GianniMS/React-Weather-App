@@ -1,0 +1,11 @@
+.cardTitle {
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: 'Archivo Black', sans-serif;
+    color: black;
+    /*font-family: 'DM Sans', sans-serif;*/
+}
+
+.titleEnd {
+    color: #A48374;
+}
