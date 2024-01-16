@@ -12,36 +12,6 @@
     border-radius: 15px;
 }
 
-.search-bar {
-    margin-top: 2vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.si-container {
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    background-color: white;
-    margin-left: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-icon {
-    margin-top: -2px;
-    width: 40%;
-    height: 40%;
-}
-
-.locationInput {
-    border-radius: 40px;
-    width: 200px;
-    height: 30px;
-}
-
 .weather-all {
     display: flex;
     flex-direction: column;
