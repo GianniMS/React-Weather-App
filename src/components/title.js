@@ -5,7 +5,7 @@ class Title extends React.Component {
 
     render() {
         return (
-            <div className="cardTitle">Weather App<span className="titleEnd">.</span></div>
+            <div className="title">Weather App<span>.</span></div>
         );
     }
 }

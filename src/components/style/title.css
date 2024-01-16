@@ -1,11 +1,12 @@
-.cardTitle {
-    font-size: 2vw;
-    font-weight: bold;
+.title {
+    font-size: 3vw;
     font-family: 'Archivo Black', sans-serif;
     color: black;
-    /*font-family: 'DM Sans', sans-serif;*/
+    position: absolute;
+    top: 35px;
+    left: 50px;
 }
 
-.titleEnd {
+* span {
     color: #A48374;
 }

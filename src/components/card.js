@@ -1,5 +1,4 @@
 import React from "react";
-import Title from "./title";
 import "./style/card.css";
 
 class Card extends React.Component {
@@ -7,7 +6,7 @@ class Card extends React.Component {
     render() {
         return (
             <div className="cardMain">
-                <Title/>
+                TEST
             </div>
         );
     }
