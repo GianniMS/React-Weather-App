@@ -46,6 +46,12 @@
     font-size: 1vw;
 }
 
+.description-location {
+    color: white;
+    font-weight: bold;
+    font-size: 1vw;
+}
+
 .weather-details {
     margin-top: 10vh;
     display: flex;
