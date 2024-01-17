@@ -18,6 +18,7 @@ class Card extends React.Component {
             weatherData: null,
             loading: true,
             error: null,
+            imageSrc: cloud_icon
         };
     }
 
@@ -52,7 +53,7 @@ class Card extends React.Component {
     };
 
     render() {
-        const {weatherData, loading, error,} = this.state;
+        const {weatherData, loading, error, imageSrc} = this.state;
 
         return (
             <div className="card-main">
@@ -62,7 +63,7 @@ class Card extends React.Component {
                     <div className="weather-all">
                         <div className="weather-main">
                             <div className="main-icon">
-                                <img src={cloud_icon} alt="" className="m-icon"/>
+                                <img src={imageSrc} alt="" className="m-icon"/>
                             </div>
                             <div className="main-info">
                                 {Math.round(weatherData.main.temp)}°C
