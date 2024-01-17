@@ -62,6 +62,7 @@ class Card extends React.Component {
                     <div className="weather-all">
                         <div className="weather-main">
                             <div className="main-icon">
+                                {/*insert component to take care of this*/}
                                 <img src={cloud_icon} alt="" className="m-icon"/>
                             </div>
                             <div className="description-location">
