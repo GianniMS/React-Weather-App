@@ -78,6 +78,7 @@ class Card extends React.Component {
 
         return (
             <div className="card-main">
+
                 {loading && <p>Loading...</p>}
                 {error && <p>Error: {error}</p>}
                 {weatherData && (
@@ -85,9 +86,6 @@ class Card extends React.Component {
                         <div className="weather-main">
                             <div className="main-icon">
                                 <img src={Micon} className="m-icon"/>
-                            </div>
-                            <div className="description-location">
-                                {weatherData.weather[0].main}
                             </div>
                             <div className="main-info">
                                 {Math.round(weatherData.main.temp)}°C

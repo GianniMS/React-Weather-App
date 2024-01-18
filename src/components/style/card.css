@@ -43,7 +43,7 @@
 .main-location {
     color: white;
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 1.8vw;
 }
 
 .description-location {
@@ -53,7 +53,7 @@
 }
 
 .weather-details {
-    margin-top: 10vh;
+    margin-top: 9vh;
     display: flex;
     flex-direction: row;
 }
