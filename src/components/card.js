@@ -18,12 +18,13 @@ class Card extends React.Component {
             weatherData: null,
             loading: true,
             error: null,
-            Micon: cloud_icon
+            Micon: cloud_icon,
+            search: "Amsterdam",
         };
     }
 
     componentDidMount() {
-        this.fetchWeatherData("Amsterdam"); // You can set the default city here
+        this.fetchWeatherData(this.state.search);
     }
 
     fetchWeatherData = async (city) => {
@@ -73,15 +74,27 @@ class Card extends React.Component {
         }
     };
 
+    handleChange = (e) => {
+        this.setState({
+            search: e.target.value,
+        });
+    };
+
+    handleSearch = () => {
+        const { search } = this.state;
+        this.fetchWeatherData(search);
+    };
+
     render() {
-        const {weatherData, loading, error, Micon, imageSrc} = this.state;
+        const {weatherData, loading, error, Micon, search} = this.state;
 
         return (
             <div className="card-main">
                 <div className="search-bar">
-                    <input type="text" className="search-input"/>
+                    <input type="text" className="search-input" placeholder="find your city.."
+                           onChange={this.handleChange} value={search}/>
                     <div className="search-cover">
-                        <img src={search_icon} alt="" className="search-icon"/>
+                        <img src={search_icon} alt="" className="search-icon" onClick={this.handleSearch}/>
                     </div>
                 </div>
                 {loading && <p>Loading...</p>}
@@ -96,7 +109,7 @@ class Card extends React.Component {
                                 {Math.round(weatherData.main.temp)}°C
                             </div>
                             <div className="main-location">
-                                Amsterdam
+                                {weatherData.name}
                             </div>
                         </div>
                         <div className="weather-details">
