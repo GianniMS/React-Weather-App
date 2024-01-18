@@ -1,6 +1,5 @@
 import React, { changeEvent, useState, useEffect} from "react";
 import axios from "axios";
-
 import "./style/card.css";
 import search_icon from "../components/assets/search.png";
 import wind_icon from "../components/assets/wind.png";
@@ -11,6 +10,7 @@ import drizzle_icon from "../components/assets/drizzle.png";
 import rain_icon from "../components/assets/rain.png";
 import snow_icon from "../components/assets/snow.png";
 
+
 class Card extends React.Component {
     constructor(props) {
         super(props);
@@ -18,6 +18,7 @@ class Card extends React.Component {
             weatherData: null,
             loading: true,
             error: null,
+            Micon: cloud_icon
         };
     }
 
@@ -33,7 +34,28 @@ class Card extends React.Component {
             const response = await axios.get(apiUrl);
             const temperatureInCelsius = response.data.main.temp - 273.15;
 
+            let newMicon = cloud_icon; // Default value
+
+            if (response.data.weather[0].icon === "01d" || response.data.weather[0].icon === "01n") {
+                newMicon = clear_icon;
+            } else if (response.data.weather[0].icon === "02d" || response.data.weather[0].icon === "02n") {
+                newMicon = cloud_icon;
+            } else if (response.data.weather[0].icon === "03d" || response.data.weather[0].icon === "03n") {
+                newMicon = drizzle_icon;
+            } else if (response.data.weather[0].icon === "04d" || response.data.weather[0].icon === "04n") {
+                newMicon = drizzle_icon;
+            } else if (response.data.weather[0].icon === "09d" || response.data.weather[0].icon === "09n") {
+                newMicon = rain_icon;
+            } else if (response.data.weather[0].icon === "10d" || response.data.weather[0].icon === "10n") {
+                newMicon = rain_icon;
+            } else if (response.data.weather[0].icon === "13" || response.data.weather[0].icon === "13n") {
+                newMicon = snow_icon;
+            } else {
+                newMicon = clear_icon;
+            }
+
             this.setState({
+                Micon: newMicon,
                 weatherData: {
                     ...response.data,
                     main: {
@@ -52,7 +74,7 @@ class Card extends React.Component {
     };
 
     render() {
-        const {weatherData, loading, error, imageSrc} = this.state;
+        const {weatherData, loading, error, Micon, imageSrc} = this.state;
 
         return (
             <div className="card-main">
@@ -62,8 +84,7 @@ class Card extends React.Component {
                     <div className="weather-all">
                         <div className="weather-main">
                             <div className="main-icon">
-                                {/*insert component to take care of this*/}
-                                <img src={cloud_icon} alt="" className="m-icon"/>
+                                <img src={Micon} className="m-icon"/>
                             </div>
                             <div className="description-location">
                                 {weatherData.weather[0].main}
