@@ -1,4 +1,4 @@
-import React, { changeEvent, useState, useEffect} from "react";
+import React, {changeEvent, useState, useEffect} from "react";
 import axios from "axios";
 import "./style/card.css";
 import search_icon from "../components/assets/search.png";
@@ -78,7 +78,12 @@ class Card extends React.Component {
 
         return (
             <div className="card-main">
-
+                <div className="search-bar">
+                    <input type="text" className="search-input"/>
+                    <div className="search-cover">
+                        <img src={search_icon} alt="" className="search-icon"/>
+                    </div>
+                </div>
                 {loading && <p>Loading...</p>}
                 {error && <p>Error: {error}</p>}
                 {weatherData && (
